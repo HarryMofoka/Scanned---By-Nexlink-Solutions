@@ -80,7 +80,7 @@ ScanByNexlink replaces paper business cards with a **live digital profile** that
 | Layer | Technology | Purpose |
 |---|---|---|
 | **Web frontend** | HTML/CSS/JS (static, migrating to Next.js) | Landing page + public profile pages |
-| **Mobile app** | React Native + Expo | iOS + Android from one codebase |
+| **Mobile app** | React Native (0.81.0) + Expo (SDK 54) | iOS + Android from one codebase (New Arch enabled) |
 | **Backend/API** | Next.js API routes (planned) | REST API for both clients |
 | **Database** | PostgreSQL via Supabase (free tier) | Managed, encrypted at rest |
 | **Auth** | Supabase Auth | Email/password + Google/Apple sign-in |

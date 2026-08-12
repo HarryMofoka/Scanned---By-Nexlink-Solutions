@@ -6,6 +6,7 @@
     "orientation": "portrait",
     "scheme": "scanbynexlink",
     "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.nexlink.scanbynexlink"

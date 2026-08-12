@@ -20,7 +20,9 @@ Running changelog of all updates to the project.
   - `login.html` — Login screen UI.
   - `signup.html` — Sign-up screen UI.
 - **React Native Mobile App (`mobile-app/`):**
-  - Full Expo project setup (`package.json`, `app.json`, `babel.config.js`).
+  - Full **Expo SDK 54** configuration (`"expo": "~54.0.0"`, `"react": "19.1.0"`, `"react-native": "0.81.0"`).
+  - Enabled **New Architecture** (`"newArchEnabled": true` in `app.json`).
+  - Added `SafeAreaProvider` in `App.js` for optimal layout in SDK 54.
   - Modular theme system matching web design tokens (`tokens.js`).
   - Shared UI components (`Button`, `Card`, `Input`, `Header`).
   - Stack + Tab Navigation setup (`AppNavigator.js`).

@@ -23,9 +23,12 @@ Created 6 additional pages sharing design tokens, Three.js background, GSAP anim
 - `login.html` — Login screen UI with email/password and social login options.
 - `signup.html` — Sign-up screen UI.
 
-### React Native (Expo) Mobile App Scaffold (`mobile-app/`)
-Created complete mobile app structure matching `Planning/05_mobile_screens.md`:
-- `App.js`, `app.json`, `package.json`, `babel.config.js`
+### React Native (Expo SDK 54) Mobile App Scaffold (`mobile-app/`)
+Upgraded and configured for **Expo SDK 54**:
+- `package.json` updated with `"expo": "~54.0.0"`, `"react": "19.1.0"`, `"react-native": "0.81.0"`.
+- `app.json` updated with `"newArchEnabled": true`.
+- `App.js` updated with `SafeAreaProvider` for Expo 54 safe area management.
+- `QRCodeScreen.js` updated with dynamic `react-native-qrcode-svg` rendering.
 - Design system tokens in `src/theme/tokens.js` matching CSS variables.
 - Shared components: `Button.js`, `Card.js`, `Input.js`, `Header.js`.
 - React Navigation stack & tab navigator (`src/navigation/AppNavigator.js`).
