@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "ScanByNexlink",
+    "slug": "scanbynexlink",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "scanbynexlink",
+    "userInterfaceStyle": "dark",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.nexlink.scanbynexlink"
+    },
+    "android": {
+      "package": "com.nexlink.scanbynexlink",
+      "adaptiveIcon": {
+        "backgroundColor": "#141414"
+      }
+    },
+    "plugins": []
+  }
+}

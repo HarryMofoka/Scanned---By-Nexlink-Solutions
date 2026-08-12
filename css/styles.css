@@ -1,5 +1,5 @@
 /* ======================================================
-   TapShare — Design System & Landing Page Styles
+   ScanByNexlink — Design System & All Page Styles
    Tokens from: Planning/06_design_system.md
    Layout from: Planning/landing-page.html
    ====================================================== */
@@ -350,3 +350,193 @@ footer {
   html { scroll-behavior: auto; }
   .btn-primary { transition: none; }
 }
+
+/* ── Hamburger Button (mobile only) ─────────────────── */
+.menu-toggle {
+  display: flex; flex-direction: column; gap: 5px;
+  background: none; padding: 8px; z-index: 1001;
+}
+.menu-toggle span {
+  display: block; width: 24px; height: 2px;
+  background: var(--text-on-dark); border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.menu-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+@media (min-width: 840px) { .menu-toggle { display: none; } }
+
+/* ── Mobile Menu Overlay ────────────────────────────── */
+.mobile-menu {
+  position: fixed; top: 0; right: 0;
+  width: 100%; height: 100vh;
+  background: var(--bg-base);
+  z-index: 1000;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 32px;
+  transform: translateX(100%);
+  pointer-events: none;
+}
+.mobile-menu.is-open {
+  pointer-events: auto;
+}
+.mobile-menu__link {
+  font-family: 'Manrope', sans-serif;
+  font-size: 28px; font-weight: 700;
+  color: var(--text-on-dark);
+  opacity: 0;
+}
+.mobile-menu__link:hover { color: var(--accent-coral); }
+.mobile-menu__cta {
+  background: var(--accent-coral); color: #fff;
+  padding: 16px 36px; border-radius: 999px;
+  font-weight: 700; font-size: 16px;
+  opacity: 0;
+}
+@media (min-width: 840px) { .mobile-menu { display: none; } }
+
+/* ── Page Content (non-landing pages) ───────────────── */
+.page-hero {
+  padding: 60px 0 40px;
+}
+.page-hero h1 {
+  font-size: 36px; line-height: 1.15; margin-bottom: 16px;
+}
+@media (min-width: 700px) { .page-hero h1 { font-size: 48px; } }
+.page-hero p {
+  color: var(--text-on-dark-muted); font-size: 18px;
+  max-width: 560px;
+}
+
+.page-content {
+  padding: 40px 0 80px;
+}
+.page-content h2 {
+  font-size: 24px; margin-bottom: 16px; margin-top: 40px;
+}
+.page-content h2:first-child { margin-top: 0; }
+.page-content h3 {
+  font-size: 18px; margin-bottom: 10px; margin-top: 28px;
+  color: var(--accent-coral);
+}
+.page-content p,
+.page-content li {
+  color: var(--text-on-dark-muted); font-size: 15px;
+  line-height: 1.7; margin-bottom: 12px;
+}
+.page-content ul, .page-content ol {
+  padding-left: 24px; margin-bottom: 16px;
+}
+.page-content a { color: var(--accent-coral); }
+.page-content a:hover { text-decoration: underline; }
+
+/* ── Info Cards (about, support) ────────────────────── */
+.info-grid {
+  display: grid; grid-template-columns: 1fr; gap: 20px;
+  margin: 32px 0;
+}
+@media (min-width: 760px) { .info-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.info-card {
+  background: var(--bg-card-dark); border: 0.5px solid #262626;
+  border-radius: var(--radius-lg); padding: 30px 26px;
+}
+.info-card h3 {
+  color: var(--text-on-dark); margin-top: 0;
+}
+
+/* ── FAQ Accordion ──────────────────────────────────── */
+.faq-item {
+  border-bottom: 1px solid #262626;
+  padding: 20px 0;
+}
+.faq-question {
+  background: none; color: var(--text-on-dark);
+  font-size: 16px; font-weight: 600; width: 100%;
+  text-align: left; padding: 0;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.faq-question::after {
+  content: '+'; font-size: 22px; color: var(--accent-coral);
+  transition: transform 0.3s ease;
+}
+.faq-item.is-open .faq-question::after { transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.35s ease;
+  color: var(--text-on-dark-muted); font-size: 14.5px; line-height: 1.7;
+}
+.faq-item.is-open .faq-answer { max-height: 300px; }
+.faq-answer p { padding-top: 12px; }
+
+/* ── Auth Forms (login, signup) ─────────────────────── */
+.auth-container {
+  max-width: 440px; margin: 0 auto;
+  padding: 60px 0 80px;
+}
+.auth-card {
+  background: var(--bg-card-dark); border: 0.5px solid #262626;
+  border-radius: var(--radius-lg); padding: 36px 30px;
+}
+.auth-card h1 {
+  font-size: 28px; margin-bottom: 8px; text-align: center;
+}
+.auth-card p.auth-sub {
+  color: var(--text-on-dark-muted); text-align: center;
+  font-size: 14px; margin-bottom: 28px;
+}
+.form-group {
+  margin-bottom: 18px;
+}
+.form-group label {
+  display: block; font-size: 13px; font-weight: 600;
+  margin-bottom: 6px; color: var(--text-on-dark-muted);
+}
+.form-group input {
+  width: 100%; padding: 14px 16px;
+  background: var(--bg-base); border: 1px solid #333;
+  border-radius: 14px; color: var(--text-on-dark);
+  font-size: 15px; font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+.form-group input:focus {
+  outline: none; border-color: var(--accent-coral);
+}
+.form-group input::placeholder { color: #555; }
+
+.auth-btn {
+  width: 100%; padding: 16px;
+  background: var(--accent-coral); color: #fff;
+  border-radius: 999px; font-weight: 700; font-size: 15px;
+  margin-top: 8px; transition: transform 0.15s ease;
+}
+.auth-btn:hover { transform: translateY(-2px); }
+
+.auth-divider {
+  display: flex; align-items: center; gap: 16px;
+  margin: 24px 0; color: var(--text-on-dark-muted); font-size: 13px;
+}
+.auth-divider::before, .auth-divider::after {
+  content: ''; flex: 1; height: 1px; background: #333;
+}
+
+.social-btn {
+  width: 100%; padding: 14px;
+  background: transparent; border: 1px solid #333;
+  border-radius: 999px; color: var(--text-on-dark);
+  font-weight: 600; font-size: 14px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin-bottom: 10px; transition: border-color 0.2s ease;
+}
+.social-btn:hover { border-color: #555; }
+
+.auth-footer {
+  text-align: center; margin-top: 24px;
+  font-size: 14px; color: var(--text-on-dark-muted);
+}
+.auth-footer a { color: var(--accent-coral); font-weight: 600; }

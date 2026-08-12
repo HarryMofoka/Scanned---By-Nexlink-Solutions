@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — ScanByNexlink</title>
+  <meta name="description" content="ScanByNexlink privacy policy — how we collect, use, and protect your data.">
+  <meta name="theme-color" content="#141414">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+</head>
+<body>
+
+  <canvas id="scene-canvas"></canvas>
+
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <a href="index.html" class="mobile-menu__link">Home</a>
+    <a href="about.html" class="mobile-menu__link">About</a>
+    <a href="support.html" class="mobile-menu__link">Support</a>
+    <a href="login.html" class="mobile-menu__cta">Get started</a>
+  </div>
+
+  <div class="wrap">
+    <nav>
+      <a href="index.html" class="logo">
+        <div class="logo-mark">
+          <svg viewBox="0 0 40 40" fill="none" width="20" height="20">
+            <rect x="2" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="2" width="3" height="10" rx="1" fill="#fff"/>
+            <rect x="28" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="2" width="3" height="10" rx="1" fill="#fff"/>
+            <rect x="2" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="28" width="3" height="10" rx="1" fill="#fff"/>
+            <rect x="28" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="28" width="3" height="10" rx="1" fill="#fff"/>
+            <path d="M15 24C17 22 23 22 25 24" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M12 20C15.5 17 24.5 17 28 20" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M9 16C14 12 26 12 31 16" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        ScanByNexlink
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="support.html">Support</a>
+      </div>
+      <a href="login.html" class="nav-cta">Get started</a>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+
+  <div class="wrap">
+    <div class="page-hero">
+      <span class="section-eyebrow">Legal</span>
+      <h1>Privacy Policy</h1>
+      <p>Last updated: August 2026</p>
+    </div>
+  </div>
+
+  <div class="wrap page-content">
+    <h2>1. Information We Collect</h2>
+    <h3>Account Information</h3>
+    <p>When you create an account, we collect your email address and password (securely hashed — we never store your plain-text password). If you sign in with Google or Apple, we receive your name and email from the provider.</p>
+
+    <h3>Profile Information</h3>
+    <p>You choose what to share on your public profile: name, phone number, LinkedIn, and other social links. Only the fields you explicitly fill in are ever made public — everything else stays private.</p>
+
+    <h3>View Statistics</h3>
+    <p>We count views of your public profile to show you basic stats. We do <strong>not</strong> record who viewed it — stats are anonymous counts only, with no IP addresses, device fingerprints, or viewer identity stored.</p>
+
+    <h2>2. How We Use Your Information</h2>
+    <ul>
+      <li>To create and maintain your account</li>
+      <li>To display your public profile when someone scans your QR code or taps your NFC tag</li>
+      <li>To show you anonymous view statistics for your own profile</li>
+      <li>To send account-related emails (password reset, security notices)</li>
+    </ul>
+
+    <h2>3. What We Share</h2>
+    <p>We do <strong>not</strong> sell, rent, or share your personal data with third parties. Your public profile information is visible to anyone who scans your QR code or visits your profile link — this is by design and under your control.</p>
+
+    <h2>4. Data Storage &amp; Security</h2>
+    <p>Your data is stored in a managed Postgres database (Supabase) with encryption at rest. Authentication is handled by Supabase Auth — we never touch your password directly. All connections use HTTPS.</p>
+
+    <h2>5. Your Rights</h2>
+    <p>You can:</p>
+    <ul>
+      <li>Edit or remove any information from your profile at any time</li>
+      <li>Delete your account entirely — this removes all your data permanently</li>
+      <li>Request a copy of your stored data by contacting support</li>
+    </ul>
+    <p>We comply with POPIA (South Africa) and GDPR (EU) requirements where applicable.</p>
+
+    <h2>6. Cookies &amp; Tracking</h2>
+    <p>We use essential session cookies for authentication. We do not use advertising cookies, analytics trackers, or third-party tracking pixels.</p>
+
+    <h2>7. Data Retention</h2>
+    <p>Account data is retained as long as your account is active. Abuse-prevention logs (IP addresses, timestamps) are kept for 30–90 days and then deleted. View statistics are retained as aggregate counts only.</p>
+
+    <h2>8. Contact</h2>
+    <p>Questions about this policy? Reach out at <a href="mailto:privacy@scanbynexlink.com">privacy@scanbynexlink.com</a></p>
+  </div>
+
+  <!-- Footer -->
+  <div class="wrap">
+    <footer>
+      <div class="foot-row">
+        <a href="index.html" class="logo" style="font-size:16px;">
+          <div class="logo-mark" style="width:28px;height:28px;">
+            <svg viewBox="0 0 40 40" fill="none" width="16" height="16">
+              <rect x="2" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="2" width="3" height="10" rx="1" fill="#fff"/>
+              <rect x="28" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="2" width="3" height="10" rx="1" fill="#fff"/>
+              <rect x="2" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="28" width="3" height="10" rx="1" fill="#fff"/>
+              <rect x="28" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="28" width="3" height="10" rx="1" fill="#fff"/>
+              <path d="M15 24C17 22 23 22 25 24" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M12 20C15.5 17 24.5 17 28 20" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M9 16C14 12 26 12 31 16" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          ScanByNexlink
+        </a>
+        <div class="foot-links">
+          <a href="privacy.html">Privacy policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="support.html">Support</a>
+          <a href="#">© 2026 ScanByNexlink</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
+</script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

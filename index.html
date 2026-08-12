@@ -14,37 +14,60 @@
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css">
 
-  <!-- GSAP + ScrollTrigger (global scripts — used by ES modules via window.gsap) -->
+  <!-- GSAP + ScrollTrigger -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
 
-  <!-- Lenis (global UMD — exposes window.Lenis) -->
+  <!-- Lenis -->
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
 </head>
 
 <body>
 
-  <!-- Three.js particle canvas (behind all content) -->
+  <!-- Three.js particle canvas -->
   <canvas id="scene-canvas"></canvas>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <a href="index.html" class="mobile-menu__link">Home</a>
+    <a href="#how" class="mobile-menu__link">How it works</a>
+    <a href="#features" class="mobile-menu__link">Features</a>
+    <a href="#stats" class="mobile-menu__link">Stats</a>
+    <a href="about.html" class="mobile-menu__link">About</a>
+    <a href="login.html" class="mobile-menu__cta">Get started</a>
+  </div>
 
   <div class="wrap">
     <!-- ── Navigation ──────────────────────────────────── -->
     <nav>
-      <div class="logo">
+      <a href="index.html" class="logo">
         <div class="logo-mark">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M3 9L12 3L21 9V19C21 19.55 20.55 20 20 20H4C3.45 20 3 19.55 3 19V9Z" stroke="#fff"
-              stroke-width="1.8" stroke-linejoin="round" />
+          <svg viewBox="0 0 40 40" fill="none" width="20" height="20">
+            <rect x="2" y="2" width="10" height="3" rx="1" fill="#fff"/>
+            <rect x="2" y="2" width="3" height="10" rx="1" fill="#fff"/>
+            <rect x="28" y="2" width="10" height="3" rx="1" fill="#fff"/>
+            <rect x="35" y="2" width="3" height="10" rx="1" fill="#fff"/>
+            <rect x="2" y="35" width="10" height="3" rx="1" fill="#fff"/>
+            <rect x="2" y="28" width="3" height="10" rx="1" fill="#fff"/>
+            <rect x="28" y="35" width="10" height="3" rx="1" fill="#fff"/>
+            <rect x="35" y="28" width="3" height="10" rx="1" fill="#fff"/>
+            <path d="M15 24C17 22 23 22 25 24" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M12 20C15.5 17 24.5 17 28 20" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M9 16C14 12 26 12 31 16" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/>
           </svg>
         </div>
-        TapShare
-      </div>
+        ScanByNexlink
+      </a>
       <div class="nav-links">
         <a href="#how">How it works</a>
         <a href="#features">Features</a>
         <a href="#stats">Stats</a>
+        <a href="about.html">About</a>
       </div>
-      <a href="#cta" class="nav-cta">Get started</a>
+      <a href="login.html" class="nav-cta">Get started</a>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
 
     <!-- ── Hero ────────────────────────────────────────── -->
@@ -55,13 +78,13 @@
         <p class="sub">Create a profile once. Share your phone, LinkedIn, and socials with a single QR code or NFC tap —
           no app required for the person on the other end.</p>
         <div class="hero-ctas">
-          <button class="btn-primary">Create your card
+          <a href="signup.html" class="btn-primary">Create your card
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
               <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="#fff" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" />
             </svg>
-          </button>
-          <button class="btn-secondary">See how it works</button>
+          </a>
+          <a href="#how" class="btn-secondary">See how it works</a>
         </div>
         <div class="proof-row">
           <div class="avatars">
@@ -225,9 +248,8 @@
       <h2>Make your card in under two minutes</h2>
       <p>Free to start. Works on web and mobile, no printing required.</p>
       <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">
-        <button class="btn-secondary" style="background:#fff;color:var(--accent-coral-deep);border:none;">Create your
-          card</button>
-        <button class="btn-secondary">Download the app</button>
+        <a href="signup.html" class="btn-secondary" style="background:#fff;color:var(--accent-coral-deep);border:none;">Create your card</a>
+        <a href="#" class="btn-secondary">Download the app</a>
       </div>
     </div>
   </div>
@@ -236,27 +258,36 @@
   <div class="wrap">
     <footer>
       <div class="foot-row">
-        <div class="logo" style="font-size:16px;">
+        <a href="index.html" class="logo" style="font-size:16px;">
           <div class="logo-mark" style="width:28px;height:28px;">
-            <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
-              <path d="M3 9L12 3L21 9V19C21 19.55 20.55 20 20 20H4C3.45 20 3 19.55 3 19V9Z" stroke="#fff"
-                stroke-width="1.8" stroke-linejoin="round" />
+            <svg viewBox="0 0 40 40" fill="none" width="16" height="16">
+              <rect x="2" y="2" width="10" height="3" rx="1" fill="#fff"/>
+              <rect x="2" y="2" width="3" height="10" rx="1" fill="#fff"/>
+              <rect x="28" y="2" width="10" height="3" rx="1" fill="#fff"/>
+              <rect x="35" y="2" width="3" height="10" rx="1" fill="#fff"/>
+              <rect x="2" y="35" width="10" height="3" rx="1" fill="#fff"/>
+              <rect x="2" y="28" width="3" height="10" rx="1" fill="#fff"/>
+              <rect x="28" y="35" width="10" height="3" rx="1" fill="#fff"/>
+              <rect x="35" y="28" width="3" height="10" rx="1" fill="#fff"/>
+              <path d="M15 24C17 22 23 22 25 24" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M12 20C15.5 17 24.5 17 28 20" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M9 16C14 12 26 12 31 16" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/>
             </svg>
           </div>
-          TapShare
-        </div>
+          ScanByNexlink
+        </a>
         <div class="foot-links">
-          <a href="#">Privacy policy</a>
-          <a href="#">Terms</a>
-          <a href="#">Support</a>
-          <a href="#">© 2026 TapShare</a>
+          <a href="privacy.html">Privacy policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="support.html">Support</a>
+          <a href="about.html">About</a>
+          <a href="#">© 2026 ScanByNexlink</a>
         </div>
       </div>
     </footer>
   </div>
 
   <!-- ── Scripts ──────────────────────────────────────── -->
-  <!-- Three.js (ES module import map) -->
   <script type="importmap">
 {
   "imports": {
@@ -264,8 +295,6 @@
   }
 }
 </script>
-
-  <!-- App modules -->
   <script type="module" src="js/app.js"></script>
 
 </body>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up — ScanByNexlink</title>
+  <meta name="description" content="Create your ScanByNexlink account and get your digital contact card in under 2 minutes.">
+  <meta name="theme-color" content="#141414">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+</head>
+<body>
+  <canvas id="scene-canvas"></canvas>
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <a href="index.html" class="mobile-menu__link">Home</a>
+    <a href="about.html" class="mobile-menu__link">About</a>
+    <a href="support.html" class="mobile-menu__link">Support</a>
+    <a href="login.html" class="mobile-menu__cta">Log in</a>
+  </div>
+  <div class="wrap">
+    <nav>
+      <a href="index.html" class="logo">
+        <div class="logo-mark">
+          <svg viewBox="0 0 40 40" fill="none" width="20" height="20"><rect x="2" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="2" width="3" height="10" rx="1" fill="#fff"/><rect x="28" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="2" width="3" height="10" rx="1" fill="#fff"/><rect x="2" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="28" width="3" height="10" rx="1" fill="#fff"/><rect x="28" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="28" width="3" height="10" rx="1" fill="#fff"/><path d="M15 24C17 22 23 22 25 24" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/><path d="M12 20C15.5 17 24.5 17 28 20" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/><path d="M9 16C14 12 26 12 31 16" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </div>
+        ScanByNexlink
+      </a>
+      <div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="support.html">Support</a></div>
+      <a href="login.html" class="nav-cta">Log in</a>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+
+  <div class="wrap auth-container">
+    <div class="auth-card">
+      <h1>Create your card</h1>
+      <p class="auth-sub">Sign up free — takes under 2 minutes</p>
+
+      <form id="signup-form" onsubmit="return false;">
+        <div class="form-group">
+          <label for="name">Full name</label>
+          <input type="text" id="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="At least 8 characters" required minlength="8">
+        </div>
+        <button type="submit" class="auth-btn">Create account</button>
+      </form>
+
+      <div class="auth-divider">or</div>
+
+      <button class="social-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        Continue with Google
+      </button>
+      <button class="social-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+        Continue with Apple
+      </button>
+
+      <div class="auth-footer">
+        <p>Already have an account? <a href="login.html">Log in</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <footer>
+      <div class="foot-row">
+        <a href="index.html" class="logo" style="font-size:16px;">
+          <div class="logo-mark" style="width:28px;height:28px;">
+            <svg viewBox="0 0 40 40" fill="none" width="16" height="16"><rect x="2" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="2" width="3" height="10" rx="1" fill="#fff"/><rect x="28" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="2" width="3" height="10" rx="1" fill="#fff"/><rect x="2" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="28" width="3" height="10" rx="1" fill="#fff"/><rect x="28" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="28" width="3" height="10" rx="1" fill="#fff"/><path d="M15 24C17 22 23 22 25 24" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/><path d="M12 20C15.5 17 24.5 17 28 20" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/><path d="M9 16C14 12 26 12 31 16" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/></svg>
+          </div>
+          ScanByNexlink
+        </a>
+        <div class="foot-links">
+          <a href="privacy.html">Privacy policy</a><a href="terms.html">Terms</a><a href="support.html">Support</a><a href="#">© 2026 ScanByNexlink</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
+</script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

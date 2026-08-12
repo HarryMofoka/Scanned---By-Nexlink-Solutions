@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — ScanByNexlink</title>
+  <meta name="description" content="Learn about ScanByNexlink — the digital contact card platform for modern networking.">
+  <meta name="theme-color" content="#141414">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+</head>
+<body>
+
+  <canvas id="scene-canvas"></canvas>
+
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <a href="index.html" class="mobile-menu__link">Home</a>
+    <a href="about.html" class="mobile-menu__link">About</a>
+    <a href="support.html" class="mobile-menu__link">Support</a>
+    <a href="login.html" class="mobile-menu__cta">Get started</a>
+  </div>
+
+  <div class="wrap">
+    <nav>
+      <a href="index.html" class="logo">
+        <div class="logo-mark">
+          <svg viewBox="0 0 40 40" fill="none" width="20" height="20">
+            <rect x="2" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="2" width="3" height="10" rx="1" fill="#fff"/>
+            <rect x="28" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="2" width="3" height="10" rx="1" fill="#fff"/>
+            <rect x="2" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="28" width="3" height="10" rx="1" fill="#fff"/>
+            <rect x="28" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="28" width="3" height="10" rx="1" fill="#fff"/>
+            <path d="M15 24C17 22 23 22 25 24" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M12 20C15.5 17 24.5 17 28 20" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M9 16C14 12 26 12 31 16" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        ScanByNexlink
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="support.html">Support</a>
+      </div>
+      <a href="login.html" class="nav-cta">Get started</a>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+
+  <div class="wrap">
+    <div class="page-hero">
+      <span class="section-eyebrow">About us</span>
+      <h1>Networking without the friction</h1>
+      <p>ScanByNexlink replaces paper business cards with a digital profile card that's always up to date, shareable via QR code or NFC tap, and viewable by anyone — no app install required.</p>
+    </div>
+  </div>
+
+  <div class="wrap page-content">
+    <h2>The Problem We Solve</h2>
+    <p>Sharing contact info at events and meetings is still awkward — reading out phone numbers, spelling handles, making people type your LinkedIn URL. Paper cards are static, costly, and easy to lose.</p>
+
+    <h2>How It Works</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Create once, share forever</h3>
+        <p>Sign up, add your name, phone, LinkedIn, and any social links you want. We generate a unique QR code and a shareable link instantly.</p>
+      </div>
+      <div class="info-card">
+        <h3>QR + NFC</h3>
+        <p>Show your QR code to anyone — they scan with their phone camera and see your info instantly in their browser. On mobile, you can also write your link to a physical NFC tag.</p>
+      </div>
+      <div class="info-card">
+        <h3>Always current</h3>
+        <p>Change your number or add a new link anytime. Every QR code and NFC tag you've already shared updates automatically — no reprinting needed.</p>
+      </div>
+      <div class="info-card">
+        <h3>Private by design</h3>
+        <p>Only what you choose to share is public. We never sell data, and our view stats are anonymous counts only — we never track who scanned your card.</p>
+      </div>
+    </div>
+
+    <h2>Our Vision</h2>
+    <p>We believe networking should be effortless. One profile, always up to date, accessible by anyone with a phone. No app install barriers, no outdated paper cards, no friction.</p>
+    <p>ScanByNexlink is built for professionals at conferences, freelancers sharing their portfolio, creators linking their platforms, and anyone who wants a faster way to connect.</p>
+
+    <h2>Tech Stack</h2>
+    <p>Built with a modern, lightweight stack designed for reliability and speed:</p>
+    <ul>
+      <li><strong>Web:</strong> Static frontend (migrating to Next.js for SSR)</li>
+      <li><strong>Mobile:</strong> React Native via Expo — one codebase for iOS and Android</li>
+      <li><strong>Backend:</strong> Supabase (Postgres + Auth + API)</li>
+      <li><strong>Hosting:</strong> Vercel (web) + Expo EAS (mobile builds)</li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <div class="wrap">
+    <footer>
+      <div class="foot-row">
+        <a href="index.html" class="logo" style="font-size:16px;">
+          <div class="logo-mark" style="width:28px;height:28px;">
+            <svg viewBox="0 0 40 40" fill="none" width="16" height="16">
+              <rect x="2" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="2" width="3" height="10" rx="1" fill="#fff"/>
+              <rect x="28" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="2" width="3" height="10" rx="1" fill="#fff"/>
+              <rect x="2" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="28" width="3" height="10" rx="1" fill="#fff"/>
+              <rect x="28" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="28" width="3" height="10" rx="1" fill="#fff"/>
+              <path d="M15 24C17 22 23 22 25 24" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M12 20C15.5 17 24.5 17 28 20" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M9 16C14 12 26 12 31 16" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          ScanByNexlink
+        </a>
+        <div class="foot-links">
+          <a href="privacy.html">Privacy policy</a>
+          <a href="terms.html">Terms</a>
+          <a href="support.html">Support</a>
+          <a href="#">© 2026 ScanByNexlink</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
+</script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
