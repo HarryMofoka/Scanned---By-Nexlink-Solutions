@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TapShare — Your contact card, one tap away</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --bg-base:#141414;
+    --bg-card-dark:#1e1e1e;
+    --accent-coral:#ff5a36;
+    --accent-coral-deep:#b23a22;
+    --accent-peri:#8c97f5;
+    --peri-deep:#5b64c9;
+    --surface-white:#ffffff;
+    --text-on-dark:#ffffff;
+    --text-on-dark-muted:#a8a8a8;
+    --text-on-light:#141414;
+    --text-on-light-muted:#6b6b6b;
+    --radius-lg:32px;
+    --radius-md:22px;
+    --radius-sm:16px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg-base);
+    color:var(--text-on-dark);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.num{
+    font-family:'Manrope',sans-serif;
+    font-weight:800;
+    letter-spacing:-0.02em;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  button{font-family:inherit;cursor:pointer;border:none;}
+  :focus-visible{outline:2px solid var(--accent-coral);outline-offset:3px;border-radius:8px;}
+
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
+
+  /* NAV */
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:28px 0;
+  }
+  .logo{font-weight:800;font-size:20px;font-family:'Manrope',sans-serif;display:flex;align-items:center;gap:10px;}
+  .logo-mark{
+    width:34px;height:34px;border-radius:10px;
+    background:var(--accent-coral);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .logo-mark svg{width:18px;height:18px;}
+  .nav-links{display:flex;gap:36px;font-size:15px;color:var(--text-on-dark-muted);}
+  .nav-links a:hover{color:var(--text-on-dark);}
+  .nav-cta{
+    background:var(--accent-coral);color:#fff;
+    padding:11px 22px;border-radius:999px;font-weight:600;font-size:14px;
+  }
+  .nav-links, .nav-cta{display:none;}
+  @media(min-width:840px){
+    .nav-links{display:flex;}
+    .nav-cta{display:block;}
+  }
+
+  /* HERO */
+  .hero{
+    padding:60px 0 80px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:48px;
+    align-items:center;
+  }
+  @media(min-width:900px){
+    .hero{grid-template-columns:1.05fr 0.95fr;padding:80px 0 120px;}
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--bg-card-dark);border:0.5px solid #2c2c2c;
+    padding:8px 16px;border-radius:999px;
+    font-size:13px;color:var(--text-on-dark-muted);
+    margin-bottom:24px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent-coral);}
+  .hero h1{
+    font-size:44px;line-height:1.08;margin-bottom:22px;
+  }
+  @media(min-width:600px){.hero h1{font-size:58px;}}
+  @media(min-width:1000px){.hero h1{font-size:66px;}}
+  .hero h1 .hl{color:var(--accent-coral);}
+  .hero p.sub{
+    font-size:18px;color:var(--text-on-dark-muted);max-width:480px;margin-bottom:34px;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px;}
+  .btn-primary{
+    background:var(--accent-coral);color:#fff;
+    padding:16px 28px;border-radius:999px;font-weight:600;font-size:15px;
+    display:inline-flex;align-items:center;gap:8px;
+    transition:transform .15s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-secondary{
+    background:transparent;color:#fff;border:1px solid #3a3a3a;
+    padding:16px 26px;border-radius:999px;font-weight:600;font-size:15px;
+  }
+  .btn-secondary:hover{border-color:#5a5a5a;}
+  .proof-row{display:flex;align-items:center;gap:14px;}
+  .avatars{display:flex;}
+  .avatars span{
+    width:34px;height:34px;border-radius:50%;
+    border:2px solid var(--bg-base);
+    margin-left:-10px;
+    background:linear-gradient(135deg,var(--accent-peri),var(--peri-deep));
+    display:flex;align-items:center;justify-content:center;
+    font-size:12px;font-weight:700;color:#fff;
+  }
+  .avatars span:first-child{margin-left:0;}
+  .proof-row p{font-size:13px;color:var(--text-on-dark-muted);}
+  .proof-row b{color:#fff;}
+
+  /* HERO VISUAL — phone mockup */
+  .hero-visual{position:relative;display:flex;justify-content:center;}
+  .phone{
+    width:280px;background:#0c0c0c;border-radius:44px;
+    padding:14px;border:1px solid #2a2a2a;
+    position:relative;
+  }
+  .phone-screen{
+    background:var(--bg-base);border-radius:32px;padding:22px 18px 26px;
+    min-height:520px;position:relative;
+  }
+  .status-row{display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:22px;color:#fff;}
+  .card-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+  .card{border-radius:var(--radius-md);padding:16px;}
+  .card-coral{background:var(--accent-coral);color:#fff;}
+  .card-peri{background:var(--accent-peri);color:#fff;}
+  .card-label{font-size:13px;font-weight:600;margin-bottom:10px;opacity:.95;}
+  .qr-mini{
+    background:#fff;border-radius:10px;width:68px;height:68px;margin:0 auto;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .qr-mini svg{width:52px;height:52px;}
+  .card-white{
+    background:#fff;color:var(--text-on-light);border-radius:var(--radius-md);
+    padding:18px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  .cw-left b{font-size:15px;display:block;}
+  .cw-left span{font-size:12px;color:var(--text-on-light-muted);}
+  .ring{
+    width:52px;height:52px;border-radius:50%;
+    background:conic-gradient(var(--accent-coral) 0 78%, #eee 78% 100%);
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+  }
+  .ring::after{content:'';position:absolute;width:38px;height:38px;background:#fff;border-radius:50%;}
+  .ring span{position:relative;font-size:11px;font-weight:700;z-index:1;}
+  .float-badge{
+    position:absolute;background:#fff;color:var(--text-on-light);
+    border-radius:999px;padding:9px 16px;font-size:12px;font-weight:700;
+    display:flex;align-items:center;gap:6px;
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+  }
+  .float-badge.b1{top:60px;right:-18px;}
+  .float-badge.b2{bottom:120px;left:-22px;}
+  .float-badge i{width:8px;height:8px;border-radius:50%;background:var(--accent-coral);}
+
+  /* SECTION HEADERS */
+  .section{padding:80px 0;}
+  .section-head{max-width:600px;margin-bottom:48px;}
+  .section-eyebrow{color:var(--accent-coral);font-weight:700;font-size:13px;letter-spacing:.02em;margin-bottom:14px;display:block;}
+  .section-head h2{font-size:32px;line-height:1.15;margin-bottom:14px;}
+  @media(min-width:700px){.section-head h2{font-size:40px;}}
+  .section-head p{color:var(--text-on-dark-muted);font-size:16px;}
+
+  /* HOW IT WORKS */
+  .steps{display:grid;grid-template-columns:1fr;gap:20px;}
+  @media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr);}}
+  .step{
+    background:var(--bg-card-dark);border:0.5px solid #262626;
+    border-radius:var(--radius-lg);padding:30px 26px;
+  }
+  .step-num{
+    width:40px;height:40px;border-radius:50%;
+    background:var(--accent-coral);color:#fff;font-weight:700;font-size:15px;
+    display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+  }
+  .step:nth-child(2) .step-num{background:var(--accent-peri);}
+  .step:nth-child(3) .step-num{background:#fff;color:var(--text-on-light);}
+  .step h3{font-size:19px;margin-bottom:10px;font-weight:700;}
+  .step p{color:var(--text-on-dark-muted);font-size:14.5px;}
+
+  /* FEATURE STRIP */
+  .feature-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+  @media(min-width:640px){.feature-grid{grid-template-columns:1fr 1fr;}}
+  @media(min-width:1000px){.feature-grid{grid-template-columns:1.2fr 1fr 1fr;}}
+  .feat-card{border-radius:var(--radius-lg);padding:30px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;}
+  .feat-coral{background:var(--accent-coral);color:#fff;}
+  .feat-peri{background:var(--accent-peri);color:#fff;}
+  .feat-white{background:#fff;color:var(--text-on-light);}
+  .feat-card h3{font-size:22px;margin-bottom:8px;}
+  .feat-card p{font-size:14.5px;opacity:.92;}
+  .feat-white p{color:var(--text-on-light-muted);opacity:1;}
+  .feat-icon{
+    width:44px;height:44px;border-radius:50%;
+    background:rgba(255,255,255,.22);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  }
+  .feat-white .feat-icon{background:#f2f2f2;}
+  .feat-icon svg{width:22px;height:22px;}
+
+  /* STATS PREVIEW */
+  .stats-panel{
+    background:var(--bg-card-dark);border:0.5px solid #262626;
+    border-radius:var(--radius-lg);padding:36px 30px;
+    display:grid;grid-template-columns:1fr;gap:28px;
+  }
+  @media(min-width:900px){.stats-panel{grid-template-columns:1.3fr 1fr;align-items:center;}}
+  .bars{display:flex;align-items:flex-end;gap:10px;height:180px;}
+  .bar{flex:1;border-radius:8px 8px 0 0;background:linear-gradient(to top,var(--accent-coral-deep),var(--accent-coral));position:relative;}
+  .bar.peak{background:#0c0c0c;}
+  .bar span{position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;white-space:nowrap;}
+  .stat-nums{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .stat-box{background:#fff;color:var(--text-on-light);border-radius:var(--radius-sm);padding:18px;text-align:center;}
+  .stat-box .num{font-size:26px;display:block;}
+  .stat-box span{font-size:12px;color:var(--text-on-light-muted);}
+
+  /* CTA */
+  .cta-band{
+    background:linear-gradient(120deg,var(--accent-coral),var(--accent-coral-deep));
+    border-radius:var(--radius-lg);
+    padding:56px 32px;text-align:center;
+    display:flex;flex-direction:column;align-items:center;gap:20px;
+  }
+  .cta-band h2{font-size:30px;max-width:520px;}
+  @media(min-width:700px){.cta-band h2{font-size:38px;}}
+  .cta-band p{color:rgba(255,255,255,.85);max-width:420px;}
+  .cta-band .btn-secondary{border-color:rgba(255,255,255,.5);}
+
+  footer{padding:40px 0 60px;border-top:0.5px solid #232323;margin-top:40px;}
+  .foot-row{display:flex;flex-direction:column;gap:20px;align-items:flex-start;}
+  @media(min-width:700px){.foot-row{flex-direction:row;justify-content:space-between;align-items:center;}}
+  .foot-links{display:flex;gap:24px;font-size:13px;color:var(--text-on-dark-muted);flex-wrap:wrap;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .btn-primary{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <div class="logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 9L12 3L21 9V19C21 19.55 20.55 20 20 20H4C3.45 20 3 19.55 3 19V9Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </div>
+      TapShare
+    </div>
+    <div class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#stats">Stats</a>
+    </div>
+    <a href="#cta" class="nav-cta">Get started</a>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow"><span class="dot"></span>Now on web and mobile</div>
+      <h1>Your contact card, <span class="hl">one tap away</span></h1>
+      <p class="sub">Create a profile once. Share your phone, LinkedIn, and socials with a single QR code or NFC tap — no app required for the person on the other end.</p>
+      <div class="hero-ctas">
+        <button class="btn-primary">Create your card
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="btn-secondary">See how it works</button>
+      </div>
+      <div class="proof-row">
+        <div class="avatars">
+          <span>TN</span><span>MJ</span><span>AK</span>
+        </div>
+        <p>Trusted by early users at <b>meetups and conferences</b></p>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="status-row"><span>09:41</span><span>●●●</span></div>
+          <div class="card-pair">
+            <div class="card card-coral">
+              <div class="card-label">Your QR code</div>
+              <div class="qr-mini">
+                <svg viewBox="0 0 40 40"><rect width="40" height="40" fill="#fff"/><g fill="#141414"><rect x="2" y="2" width="10" height="10"/><rect x="5" y="5" width="4" height="4" fill="#fff"/><rect x="28" y="2" width="10" height="10"/><rect x="31" y="5" width="4" height="4" fill="#fff"/><rect x="2" y="28" width="10" height="10"/><rect x="5" y="31" width="4" height="4" fill="#fff"/><rect x="16" y="4" width="3" height="3"/><rect x="22" y="8" width="3" height="3"/><rect x="16" y="16" width="3" height="3"/><rect x="24" y="18" width="3" height="3"/><rect x="18" y="24" width="3" height="3"/><rect x="28" y="24" width="3" height="3"/><rect x="16" y="32" width="3" height="3"/><rect x="24" y="32" width="3" height="3"/></g></svg>
+              </div>
+            </div>
+            <div class="card card-peri">
+              <div class="card-label">Tap to write NFC</div>
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="margin:10px auto 6px;"><path d="M6 8C8 6 16 6 18 8M4 12C7.5 9 16.5 9 20 12M8 16C9.5 14.7 14.5 14.7 16 16" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <button class="btn-secondary" style="border-color:rgba(255,255,255,.5);padding:9px 14px;font-size:12px;width:100%;text-align:center;justify-content:center;">Write tag</button>
+            </div>
+          </div>
+          <div class="card-white">
+            <div class="cw-left">
+              <b>47 views</b>
+              <span>+12 this week</span>
+            </div>
+            <div class="ring"><span>78%</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="float-badge b1"><i></i>Scanned by Amara</div>
+      <div class="float-badge b2"><i></i>Card updated</div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap section" id="how">
+  <div class="section-head">
+    <span class="section-eyebrow">How it works</span>
+    <h2>Three steps, no app required for the other person</h2>
+    <p>Sign up, add your details, and share — anyone who scans your code sees your info instantly, right in their browser.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Build your card</h3>
+      <p>Add your name, phone, LinkedIn, and any socials you want to share. Skip whatever you don't.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Get your QR or tag</h3>
+      <p>We generate a QR code instantly. On mobile, write the same link to a physical NFC tag in one tap.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Share and update anytime</h3>
+      <p>Print it, save it, or share the link directly. Change your number later and every code updates with it.</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap section" id="features">
+  <div class="section-head">
+    <span class="section-eyebrow">Built for how you actually network</span>
+    <h2>Everything you need, nothing you don't</h2>
+  </div>
+  <div class="feature-grid">
+    <div class="feat-card feat-coral">
+      <div>
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4V20M4 12H20" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Always up to date</h3>
+        <p>Change your number or add a new link — your QR code and NFC tag keep working, no reprinting needed.</p>
+      </div>
+    </div>
+    <div class="feat-card feat-peri">
+      <div>
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M6 8C8 6 16 6 18 8M4 12C7.5 9 16.5 9 20 12M8 16C9.5 14.7 14.5 14.7 16 16" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>Tap or scan</h3>
+        <p>Works with a camera scan or an NFC tap from the mobile app — whichever's faster in the moment.</p>
+      </div>
+    </div>
+    <div class="feat-card feat-white">
+      <div>
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3L4 7V12C4 16.5 7.5 20 12 21C16.5 20 20 16.5 20 12V7L12 3Z" stroke="#141414" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <h3>Private by design</h3>
+        <p>Only what you choose to share is ever public. We never sell data or track who scans your card.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap section" id="stats">
+  <div class="section-head">
+    <span class="section-eyebrow">Know your reach</span>
+    <h2>See how your card is doing</h2>
+    <p>Anonymous view counts, no creepy tracking — just enough to know your card is working.</p>
+  </div>
+  <div class="stats-panel">
+    <div>
+      <div class="bars">
+        <div class="bar" style="height:44%"><span>128</span></div>
+        <div class="bar" style="height:58%"><span>276</span></div>
+        <div class="bar" style="height:70%"><span>346</span></div>
+        <div class="bar peak" style="height:96%"><span>400</span></div>
+        <div class="bar" style="height:66%"><span>310</span></div>
+        <div class="bar" style="height:40%"><span>118</span></div>
+      </div>
+    </div>
+    <div class="stat-nums">
+      <div class="stat-box"><span class="num">1.2k</span><span>Total views</span></div>
+      <div class="stat-box"><span class="num">+18%</span><span>vs last month</span></div>
+      <div class="stat-box"><span class="num">340</span><span>NFC taps</span></div>
+      <div class="stat-box"><span class="num">98%</span><span>Scan success</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap section" id="cta">
+  <div class="cta-band">
+    <h2>Make your card in under two minutes</h2>
+    <p>Free to start. Works on web and mobile, no printing required.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">
+      <button class="btn-secondary" style="background:#fff;color:var(--accent-coral-deep);border:none;">Create your card</button>
+      <button class="btn-secondary">Download the app</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <footer>
+    <div class="foot-row">
+      <div class="logo" style="font-size:16px;">
+        <div class="logo-mark" style="width:28px;height:28px;">
+          <svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M3 9L12 3L21 9V19C21 19.55 20.55 20 20 20H4C3.45 20 3 19.55 3 19V9Z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </div>
+        TapShare
+      </div>
+      <div class="foot-links">
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Support</a>
+        <a href="#">© 2026 TapShare</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>
