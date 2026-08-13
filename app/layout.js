@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 export const metadata = {
+  metadataBase: new URL('https://scanned.co'),
   title: 'Scanned by Nexlink Solutions — Your contact card, one tap away',
   description: 'Build your contact card once. Share your phone, LinkedIn, and socials with a single QR code or NFC tap — no app required for the recipient.',
   icons: {
