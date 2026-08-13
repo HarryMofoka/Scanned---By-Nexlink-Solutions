@@ -1,5 +1,5 @@
 /* ======================================================
-   Scanned by Nexlink Solutions — Master Design System
+   Scanned by Nexlink Solutions — Master Design System (Next.js)
    ====================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
@@ -120,9 +120,9 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
   background: #fff; border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
-.menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-.menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.menu-toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle.is-open span:nth-child(2) { opacity: 0; }
+.menu-toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 @media (min-width: 920px) { .menu-toggle { display: none; } }
 
 .mobile-menu {
@@ -274,7 +274,7 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
 }
 .col-head .right { display: flex; gap: 6px; }
 .mini-btn {
-  width: 28px; height: 28px; border-radius: 9px; background: #151513;
+  width: 28px; height: 28px; border-radius: 999px; background: #151513;
   display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 14px;
   cursor: pointer; transition: background 0.2s, color 0.2s;
 }
@@ -468,17 +468,14 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
 /* ── INTERACTIVE MODALS & TOAST SYSTEM ───────────────── */
 .modal-overlay {
   position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(12px);
-  z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0;
-  pointer-events: none; transition: opacity 0.25s ease; padding: 20px;
+  z-index: 9999; display: flex; align-items: center; justify-content: center;
+  padding: 20px;
 }
-.modal-overlay.is-active { opacity: 1; pointer-events: auto; }
 .modal-card {
   background: #111110; border: 1px solid var(--panel-border); border-radius: 24px;
   width: 100%; max-width: 480px; padding: 32px; position: relative;
-  transform: translateY(20px); transition: transform 0.25s ease;
   box-shadow: 0 30px 80px rgba(0,0,0,0.8);
 }
-.modal-overlay.is-active .modal-card { transform: translateY(0); }
 .modal-close {
   position: absolute; top: 20px; right: 20px; width: 32px; height: 32px;
   border-radius: 50%; background: #1e1e1c; color: #fff; display: flex; align-items: center; justify-content: center;
@@ -497,11 +494,6 @@ nav { display: flex; align-items: center; justify-content: space-between; paddin
   background: rgba(17, 17, 16, 0.95); border: 1px solid var(--accent-1);
   color: #fff; padding: 14px 22px; border-radius: 999px; font-size: 14px; font-weight: 600;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: flex; align-items: center; gap: 10px;
-  animation: toastIn 0.3s ease forwards;
-}
-@keyframes toastIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ── FOOTER ─────────────────────────────────────────── */
