@@ -69,11 +69,13 @@ img, svg { display: block; }
 /* ── Node Constellation ─────────────────────────────── */
 .nodes { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0.55; }
 
-.wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 2; }
-@media (max-width: 768px) { .wrap { padding: 0 16px; } }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 48px; position: relative; z-index: 2; }
+@media (max-width: 920px) { .wrap { padding: 0 32px; } }
+@media (max-width: 640px) { .wrap { padding: 0 24px; } }
 
 /* ── Navigation ─────────────────────────────────────── */
-nav { display: flex; align-items: center; justify-content: space-between; padding: 34px 0; }
+nav { display: flex; align-items: center; justify-content: space-between; padding: 34px 8px; }
+@media (max-width: 768px) { nav { padding: 24px 8px; } }
 
 .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
 .logo-mark { width: 30px; height: 26px; position: relative; flex-shrink: 0; }
