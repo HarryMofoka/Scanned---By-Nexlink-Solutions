@@ -1,110 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support — ScanByNexlink</title>
-  <meta name="description" content="Get help with ScanByNexlink — FAQ, troubleshooting, and contact.">
-  <meta name="theme-color" content="#141414">
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support & FAQ — Scanned by Nexlink Solutions</title>
+<meta name="description" content="Get help with Scanned by Nexlink Solutions — FAQs, setup guides, and support contact.">
+<meta name="theme-color" content="#050505">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
 </head>
 <body>
-  <canvas id="scene-canvas"></canvas>
+
+  <!-- Mobile Menu Overlay -->
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
     <a href="index.html" class="mobile-menu__link">Home</a>
     <a href="about.html" class="mobile-menu__link">About</a>
     <a href="support.html" class="mobile-menu__link">Support</a>
-    <a href="login.html" class="mobile-menu__cta">Get started</a>
+    <a href="signup.html" class="mobile-menu__cta">Get early access</a>
   </div>
+
   <div class="wrap">
     <nav>
       <a href="index.html" class="logo">
         <div class="logo-mark">
-          <svg viewBox="0 0 40 40" fill="none" width="20" height="20"><rect x="2" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="2" width="3" height="10" rx="1" fill="#fff"/><rect x="28" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="2" width="3" height="10" rx="1" fill="#fff"/><rect x="2" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="28" width="3" height="10" rx="1" fill="#fff"/><rect x="28" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="28" width="3" height="10" rx="1" fill="#fff"/><path d="M15 24C17 22 23 22 25 24" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/><path d="M12 20C15.5 17 24.5 17 28 20" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/><path d="M9 16C14 12 26 12 31 16" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 30 26" fill="none">
+            <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffb37a"/><stop offset="1" stop-color="#ff5a1f"/>
+            </linearGradient></defs>
+            <rect x="0" y="17" width="30" height="6" rx="3" fill="url(#lg)"/>
+            <rect x="4" y="9" width="22" height="6" rx="3" fill="url(#lg)" opacity=".8"/>
+            <rect x="8" y="1" width="14" height="6" rx="3" fill="url(#lg)" opacity=".55"/>
+          </svg>
         </div>
-        ScanByNexlink
+        <div class="logo-text">
+          <span class="brand-title">Scanned</span>
+          <span class="brand-sub">by Nexlink Solutions</span>
+        </div>
       </a>
-      <div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="support.html">Support</a></div>
-      <a href="login.html" class="nav-cta">Get started</a>
-      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav-pill">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="support.html" class="active">Support</a>
+      </div>
+      <div class="nav-right">
+        <a href="login.html" class="btn-ghost-pill">Sign In</a>
+        <a href="signup.html" class="btn-solid-pill">Get early access</a>
+      </div>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </div>
 
   <div class="wrap">
     <div class="page-hero">
-      <span class="section-eyebrow">Help</span>
-      <h1>Support</h1>
-      <p>Find answers to common questions or get in touch with our team.</p>
+      <span class="section-eyebrow">Help Center</span>
+      <h1>How can we help you?</h1>
+      <p>Find quick answers to common questions about setting up, updating, and sharing your digital contact card.</p>
     </div>
   </div>
 
-  <div class="wrap page-content">
-    <h2>Frequently Asked Questions</h2>
+  <div class="wrap">
+    <div class="page-card">
+      <h2>Frequently Asked Questions</h2>
 
-    <div class="faq-item">
-      <button class="faq-question">Do people need the app to see my card?</button>
-      <div class="faq-answer"><p>No. Anyone who scans your QR code or taps your NFC tag sees your profile instantly in their phone's browser — no app install required.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">What happens if I change my phone number?</button>
-      <div class="faq-answer"><p>Just update your profile. Every QR code and NFC tag you've already shared still works — they all point to your live profile, so changes appear instantly.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">How do NFC tags work?</button>
-      <div class="faq-answer"><p>From the mobile app, tap "Write to NFC tag" and hold your phone near a blank NFC sticker. The app programs it with your profile link. Anyone can then tap their phone on the sticker to see your info.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">Can people see who viewed their card?</button>
-      <div class="faq-answer"><p>No. Stats show anonymous view counts only — total views and a simple trend. We never track or identify who scanned your code.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">How do I delete my account?</button>
-      <div class="faq-answer"><p>Go to Settings → Delete Account. This permanently removes all your data, profile, and links. Your QR codes and NFC tags will show a "card no longer exists" page.</p></div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">Is ScanByNexlink free?</button>
-      <div class="faq-answer"><p>Yes — creating a profile, QR code, and sharing your card is completely free. Premium features may be added in the future.</p></div>
-    </div>
-
-    <h2 style="margin-top:56px;">Still need help?</h2>
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>Email us</h3>
-        <p>Reach out at <a href="mailto:support@scanbynexlink.com">support@scanbynexlink.com</a> and we'll get back to you within 24 hours.</p>
+      <div class="faq-item">
+        <button class="faq-question">Does the person scanning my card need an app?</button>
+        <div class="faq-answer">
+          <p>No! Anyone who scans your QR code or taps your NFC tag views your responsive contact card instantly in their device's default web browser (Safari, Chrome, etc.). No account or app download is required for them.</p>
+        </div>
       </div>
-      <div class="info-card">
-        <h3>Report a bug</h3>
-        <p>Found something broken? Send details to <a href="mailto:bugs@scanbynexlink.com">bugs@scanbynexlink.com</a> with screenshots if possible.</p>
+
+      <div class="faq-item">
+        <button class="faq-question">How do I write my link to an NFC tag?</button>
+        <div class="faq-answer">
+          <p>Download the mobile app for iOS or Android, log into your account, and tap the "Write NFC Tag" button on your card dashboard. Hold your blank physical NFC card or sticker against your phone to program it instantly.</p>
+        </div>
       </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What happens when I change my phone number or social links?</button>
+        <div class="faq-answer">
+          <p>Simply log into your dashboard on web or mobile and update your details. Your live profile updates instantly — every physical QR printout and NFC tag you've already shared will automatically direct to your updated info.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is my information private?</button>
+        <div class="faq-answer">
+          <p>Yes. Only the fields you explicitly choose to include on your card are visible. We never track individual scanner identities or sell your data.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I download my QR code for printing?</button>
+        <div class="faq-answer">
+          <p>Yes. You can download high-resolution PNG or SVG vector files of your unique QR code directly from your account dashboard to print on business cards, stickers, or badges.</p>
+        </div>
+      </div>
+
+      <h2 style="margin-top: 40px;">Need Direct Support?</h2>
+      <p>Have a question not answered above or need assistance with enterprise team cards? Contact our support team at <a href="mailto:support@nexlink.co.za">support@nexlink.co.za</a> and we'll get back to you within 24 hours.</p>
     </div>
   </div>
 
   <div class="wrap">
     <footer>
-      <div class="foot-row">
-        <a href="index.html" class="logo" style="font-size:16px;">
-          <div class="logo-mark" style="width:28px;height:28px;">
-            <svg viewBox="0 0 40 40" fill="none" width="16" height="16"><rect x="2" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="2" width="3" height="10" rx="1" fill="#fff"/><rect x="28" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="2" width="3" height="10" rx="1" fill="#fff"/><rect x="2" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="28" width="3" height="10" rx="1" fill="#fff"/><rect x="28" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="28" width="3" height="10" rx="1" fill="#fff"/><path d="M15 24C17 22 23 22 25 24" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/><path d="M12 20C15.5 17 24.5 17 28 20" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/><path d="M9 16C14 12 26 12 31 16" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/></svg>
-          </div>
-          ScanByNexlink
-        </a>
-        <div class="foot-links">
-          <a href="privacy.html">Privacy policy</a><a href="terms.html">Terms</a><a href="support.html">Support</a><a href="#">© 2026 ScanByNexlink</a>
+      <a href="index.html" class="logo" style="justify-content:center;">
+        <div class="logo-mark">
+          <svg viewBox="0 0 30 26" fill="none">
+            <rect x="0" y="17" width="30" height="6" rx="3" fill="#ff6a2c"/>
+            <rect x="4" y="9" width="22" height="6" rx="3" fill="#ff6a2c" opacity=".8"/>
+            <rect x="8" y="1" width="14" height="6" rx="3" fill="#ff6a2c" opacity=".55"/>
+          </svg>
         </div>
+        <div class="logo-text" style="text-align:left;">
+          <span class="brand-title">Scanned</span>
+          <span class="brand-sub">by Nexlink Solutions</span>
+        </div>
+      </a>
+      <div class="foot-links">
+        <a href="privacy.html">Privacy policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="support.html">Support</a>
+        <a href="about.html">About</a>
+        <a href="#">© 2026 Scanned by Nexlink Solutions</a>
       </div>
     </footer>
   </div>
-  <script type="importmap">
-{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
-</script>
+
   <script type="module" src="js/app.js"></script>
 </body>
 </html>

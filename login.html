@@ -1,46 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Log in — ScanByNexlink</title>
-  <meta name="description" content="Log in to your ScanByNexlink account.">
-  <meta name="theme-color" content="#141414">
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in — Scanned by Nexlink Solutions</title>
+<meta name="description" content="Log in to your Scanned by Nexlink Solutions account to manage your contact card.">
+<meta name="theme-color" content="#050505">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
 </head>
 <body>
-  <canvas id="scene-canvas"></canvas>
+
+  <!-- Mobile Menu Overlay -->
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
     <a href="index.html" class="mobile-menu__link">Home</a>
     <a href="about.html" class="mobile-menu__link">About</a>
     <a href="support.html" class="mobile-menu__link">Support</a>
     <a href="signup.html" class="mobile-menu__cta">Sign up</a>
   </div>
+
   <div class="wrap">
     <nav>
       <a href="index.html" class="logo">
         <div class="logo-mark">
-          <svg viewBox="0 0 40 40" fill="none" width="20" height="20"><rect x="2" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="2" width="3" height="10" rx="1" fill="#fff"/><rect x="28" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="2" width="3" height="10" rx="1" fill="#fff"/><rect x="2" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="28" width="3" height="10" rx="1" fill="#fff"/><rect x="28" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="28" width="3" height="10" rx="1" fill="#fff"/><path d="M15 24C17 22 23 22 25 24" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/><path d="M12 20C15.5 17 24.5 17 28 20" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/><path d="M9 16C14 12 26 12 31 16" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 30 26" fill="none">
+            <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffb37a"/><stop offset="1" stop-color="#ff5a1f"/>
+            </linearGradient></defs>
+            <rect x="0" y="17" width="30" height="6" rx="3" fill="url(#lg)"/>
+            <rect x="4" y="9" width="22" height="6" rx="3" fill="url(#lg)" opacity=".8"/>
+            <rect x="8" y="1" width="14" height="6" rx="3" fill="url(#lg)" opacity=".55"/>
+          </svg>
         </div>
-        ScanByNexlink
+        <div class="logo-text">
+          <span class="brand-title">Scanned</span>
+          <span class="brand-sub">by Nexlink Solutions</span>
+        </div>
       </a>
-      <div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="support.html">Support</a></div>
-      <a href="signup.html" class="nav-cta">Sign up</a>
-      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav-pill">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="support.html">Support</a>
+      </div>
+      <div class="nav-right">
+        <a href="signup.html" class="btn-solid-pill">Sign up</a>
+      </div>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </div>
 
   <div class="wrap auth-container">
     <div class="auth-card">
       <h1>Welcome back</h1>
-      <p class="auth-sub">Log in to manage your card</p>
+      <p class="auth-sub">Log in to manage your contact card</p>
 
       <form id="login-form" onsubmit="return false;">
         <div class="form-group">
-          <label for="email">Email</label>
+          <label for="email">Email address</label>
           <input type="email" id="email" placeholder="you@example.com" required>
         </div>
         <div class="form-group">
@@ -69,22 +94,29 @@
 
   <div class="wrap">
     <footer>
-      <div class="foot-row">
-        <a href="index.html" class="logo" style="font-size:16px;">
-          <div class="logo-mark" style="width:28px;height:28px;">
-            <svg viewBox="0 0 40 40" fill="none" width="16" height="16"><rect x="2" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="2" width="3" height="10" rx="1" fill="#fff"/><rect x="28" y="2" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="2" width="3" height="10" rx="1" fill="#fff"/><rect x="2" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="2" y="28" width="3" height="10" rx="1" fill="#fff"/><rect x="28" y="35" width="10" height="3" rx="1" fill="#fff"/><rect x="35" y="28" width="3" height="10" rx="1" fill="#fff"/><path d="M15 24C17 22 23 22 25 24" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/><path d="M12 20C15.5 17 24.5 17 28 20" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/><path d="M9 16C14 12 26 12 31 16" stroke="#FF5A36" stroke-width="2.2" stroke-linecap="round"/></svg>
-          </div>
-          ScanByNexlink
-        </a>
-        <div class="foot-links">
-          <a href="privacy.html">Privacy policy</a><a href="terms.html">Terms</a><a href="support.html">Support</a><a href="#">© 2026 ScanByNexlink</a>
+      <a href="index.html" class="logo" style="justify-content:center;">
+        <div class="logo-mark">
+          <svg viewBox="0 0 30 26" fill="none">
+            <rect x="0" y="17" width="30" height="6" rx="3" fill="#ff6a2c"/>
+            <rect x="4" y="9" width="22" height="6" rx="3" fill="#ff6a2c" opacity=".8"/>
+            <rect x="8" y="1" width="14" height="6" rx="3" fill="#ff6a2c" opacity=".55"/>
+          </svg>
         </div>
+        <div class="logo-text" style="text-align:left;">
+          <span class="brand-title">Scanned</span>
+          <span class="brand-sub">by Nexlink Solutions</span>
+        </div>
+      </a>
+      <div class="foot-links">
+        <a href="privacy.html">Privacy policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="support.html">Support</a>
+        <a href="about.html">About</a>
+        <a href="#">© 2026 Scanned by Nexlink Solutions</a>
       </div>
     </footer>
   </div>
-  <script type="importmap">
-{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
-</script>
+
   <script type="module" src="js/app.js"></script>
 </body>
 </html>
