@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { redis } from '../../../../lib/redis';
 
 const corsHeaders = {
