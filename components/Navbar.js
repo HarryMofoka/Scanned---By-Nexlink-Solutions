@@ -19,7 +19,7 @@ export default function Navbar() {
         <Link href="/#stats" className="mobile-menu__link" onClick={closeMenu}>Stats</Link>
         <Link href="/#testimonials" className="mobile-menu__link" onClick={closeMenu}>Testimonials</Link>
         <Link href="/about" className="mobile-menu__link" onClick={closeMenu}>About</Link>
-        <Link href="/signup" className="mobile-menu__cta" onClick={closeMenu}>Get early access</Link>
+        <a href="/api/download" className="mobile-menu__cta" onClick={closeMenu}>Download APK</a>
       </div>
 
       <nav>
@@ -39,7 +39,7 @@ export default function Navbar() {
           </div>
           <div className="logo-text">
             <span className="brand-title">Scanned</span>
-            <span class="brand-sub">by Nexlink Solutions</span>
+            <span className="brand-sub">by Nexlink Solutions</span>
           </div>
         </Link>
 
@@ -49,12 +49,11 @@ export default function Navbar() {
           <Link href="/#features">Features</Link>
           <Link href="/#stats">Stats</Link>
           <Link href="/#testimonials">Testimonials</Link>
-          <Link href="/#cta">Download</Link>
+          <a href="/api/download">Download</a>
         </div>
 
         <div className="nav-right">
-          <Link href="/login" className="btn-ghost-pill">Sign In</Link>
-          <Link href="/signup" className="btn-solid-pill">Get early access</Link>
+          <a href="/api/download" className="btn-solid-pill">Download APK</a>
         </div>
 
         <button

@@ -23,7 +23,7 @@ export default function AboutPage() {
           <div className="info-grid">
             <div className="info-card">
               <h3>Create once, share forever</h3>
-              <p>Sign up, add your name, phone, LinkedIn, and social handles. We generate a unique QR code and a web profile link instantly.</p>
+              <p>Install the app, add your name, phone, LinkedIn, and social handles. We generate a unique QR code and a web profile link instantly.</p>
             </div>
             <div className="info-card">
               <h3>QR + NFC Dual Sharing</h3>

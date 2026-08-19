@@ -102,12 +102,12 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <Link href="/signup" className="btn-cta">
-              Get Early Access
+            <a href="/api/download" className="btn-cta">
+              Download APK
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
                 <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </Link>
+            </a>
           </motion.div>
 
           {/* Interactive Preview Panel */}
@@ -120,7 +120,7 @@ export default function Home() {
         <div className="section-head">
           <span className="section-eyebrow">How it works</span>
           <h2>Three steps, no app required for the other person</h2>
-          <p>Sign up, add your details, and share — anyone who scans your code sees your info instantly, right in their browser.</p>
+          <p>Download the app, add your details, and share — anyone who scans your code sees your info instantly, right in their browser.</p>
         </div>
 
         <div className="steps">
@@ -157,8 +157,12 @@ export default function Home() {
           <h2>Make your contact card in under two minutes</h2>
           <p>Free to start. Works seamlessly on web and mobile — no printing required, update anytime.</p>
           <div className="cta-buttons">
-            <Link href="/signup" className="btn-cta-white">Create your card free</Link>
-            <a href="/api/download" className="btn-cta-outline">Download APK</a>
+            <a href="/api/download" className="btn-cta">
+              Download APK
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>

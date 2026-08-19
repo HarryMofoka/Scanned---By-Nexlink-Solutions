@@ -5,15 +5,15 @@ import { useState } from 'react';
 const faqs = [
   {
     q: 'Does the person scanning my card need an app?',
-    a: 'No! Anyone who scans your QR code or taps your NFC tag views your responsive contact card instantly in their device\'s default web browser (Safari, Chrome, etc.). No account or app download is required for them.',
+    a: 'No! Anyone who scans your QR code or taps your NFC tag views your responsive contact card instantly in their device\'s default web browser (Safari, Chrome, etc.). No app download is required for them.',
   },
   {
     q: 'How do I write my link to an NFC tag?',
-    a: 'Download the mobile app for iOS or Android, log into your account, and tap the "Write NFC Tag" button on your card dashboard. Hold your blank physical NFC card or sticker against your phone to program it instantly.',
+    a: 'Download the mobile app for Android, open the app, and tap the "Write NFC Tag" button on your card dashboard. Hold your blank physical NFC card or sticker against your phone to program it instantly.',
   },
   {
     q: 'What happens when I change my phone number or social links?',
-    a: 'Simply log into your dashboard on web or mobile and update your details. Your live profile updates instantly — every physical QR printout and NFC tag you\'ve already shared will automatically direct to your updated info.',
+    a: 'Simply open your app and update your details. Your live profile updates instantly — every physical QR printout and NFC tag you\'ve already shared will automatically direct to your updated info.',
   },
   {
     q: 'Is my information private?',
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: 'Can I download my QR code for printing?',
-    a: 'Yes. You can download high-resolution PNG or SVG vector files of your unique QR code directly from your account dashboard to print on business cards, stickers, or badges.',
+    a: 'Yes. You can download high-resolution PNG or SVG vector files of your unique QR code directly from your app dashboard to print on business cards, stickers, or badges.',
   },
 ];
 

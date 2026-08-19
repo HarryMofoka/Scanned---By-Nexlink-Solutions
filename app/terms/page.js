@@ -17,7 +17,7 @@ export default function TermsPage() {
       <div className="wrap">
         <div className="page-card">
           <h2>1. Acceptance of Terms</h2>
-          <p>By creating an account or accessing Scanned by Nexlink Solutions, you agree to comply with and be bound by these Terms of Service.</p>
+          <p>By downloading or using Scanned by Nexlink Solutions, you agree to comply with and be bound by these Terms of Service.</p>
 
           <h2>2. Acceptable Use</h2>
           <p>You agree to provide accurate contact information and use the platform exclusively for lawful professional networking. You may not publish malicious links, impersonate individuals without authorization, or engage in spam.</p>
@@ -32,7 +32,7 @@ export default function TermsPage() {
           <p>The platform is provided "as is." We strive for maximum uptime and reliability, but cannot guarantee uninterrupted service availability at all times.</p>
 
           <h2>6. Termination</h2>
-          <p>You may delete your account at any time. We reserve the right to suspend or terminate accounts violating these terms.</p>
+          <p>You may stop using the app at any time by uninstalling it from your device.</p>
         </div>
       </div>
     </>

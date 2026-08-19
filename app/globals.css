@@ -552,7 +552,7 @@ footer { padding: 50px 0 60px; border-top: 2px solid var(--border-faint); text-a
 .page-card ul, .page-card ol { padding-left: 24px; margin-bottom: 18px; }
 .page-card a { color: var(--accent-1); }
 
-/* Auth cards (login, signup) */
+/* Form & Modal cards */
 .auth-container { max-width: 440px; margin: 40px auto 80px; }
 .auth-card {
   background: var(--card-bg); border: 5px solid var(--panel-border);
