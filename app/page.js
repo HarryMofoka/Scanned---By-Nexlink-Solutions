@@ -158,7 +158,7 @@ export default function Home() {
           <p>Free to start. Works seamlessly on web and mobile — no printing required, update anytime.</p>
           <div className="cta-buttons">
             <Link href="/signup" className="btn-cta-white">Create your card free</Link>
-            <Link href="/#home" className="btn-cta-outline">Download mobile app</Link>
+            <a href="/api/download" className="btn-cta-outline">Download APK</a>
           </div>
         </div>
       </div>
